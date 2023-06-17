@@ -1,0 +1,54 @@
+{
+    "author": "AlexW-578",
+    "name": "Neos Mod Loader Mod",
+    "description": "A project for creating a Neos Modloader Mod.",
+    "identity": "AlexW-578.NMLmodTemplate",
+    "shortName": "nmlmod",
+    "tags": {
+      "language": "C#",
+      "type": "project"
+    },
+    "sourceName": "ModNameGoesHere",
+    "symbols": {
+      "AuthorName": {
+        "type": "parameter",
+        "dataType": "string",
+        "defaultValue": "AuthorNameGoesHere",
+        "replaces":"AuthorNameGoesHere"
+      },
+      "GithubUsername": {
+        "type": "parameter",
+        "dataType": "string",
+        "defaultValue": "GithubUsername",
+        "replaces":"GithubUsername"
+      },
+      "GithubRepoName": {
+        "type": "parameter",
+        "dataType": "string",
+        "defaultValue": "RepoName",
+        "replaces":"RepoName"
+      },
+      "versionNumber": {
+        "type": "parameter",
+        "dataType": "string",
+        "defaultValue": "0.0.1",
+        "replaces":"modVersionNumber"
+      },
+      "guid":{
+        "type": "generated",
+        "generator": "guid",
+        "replaces": "nmlGuid",
+        "parameters": {
+          "format":"d"
+        }
+      },
+      "createdate": {
+        "type": "generated",
+        "generator": "now",
+        "parameters": {
+          "format": "yyyy"
+        },
+        "replaces":"copyrightYear"
+      }
+    }
+  }
