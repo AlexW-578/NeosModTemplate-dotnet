@@ -29,32 +29,32 @@ namespace ModNameGoesHere
             static bool Prefix()
             {
                 if (!Config.GetValue(Enabled)) { return true; }
-                Warn("Code Here")
+                Warn("Code Here");
                 return false;
             }
         }
 		
         // https://harmony.pardeike.net/articles/patching-postfix.html
-        [HarmonyPatch(typeof(FrooxEngine.LogixTip), "name of method you want to patch")]
+        [HarmonyPatch(typeof(FrooxEngine.Logix.LogixTip), "name of method you want to patch")]
         class ModNameGoesHere_Postfix_Patch
         {
             static void Postfix()
             {
                 if (Config.GetValue(Enabled) )
                 {
-                    Warn("Code Here")
+                    Warn("Code Here");
                 }
             }
         }
 
         // https://harmony.pardeike.net/articles/patching-transpiler.html
-        [HarmonyPatch(typeof(FrooxEngine.LogixTip), "name of method you want to patch")]
+        [HarmonyPatch(typeof(FrooxEngine.Logix.LogixTip), "name of method you want to patch")]
         public class ModNameGoesHere_Transpiler_Patch
         {
             static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
             {
                 var code = new List<CodeInstruction>(instructions);
-                Warn("Code Here")
+                Warn("Code Here");
                 return code;
             }  
         }
